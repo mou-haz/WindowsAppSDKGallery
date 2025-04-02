@@ -114,7 +114,7 @@ jobs:
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: MSIX Package
         path: WindowsAppSDKGallery/Packages/**/WindowsAppSDKGallery*.msix
@@ -131,7 +131,7 @@ jobs:
       run: Compress-Archive WindowsAppSDKGallery/bin/x64/Release/net5.0-windows10.0.19041.0/publish/* 'WindowsAppSDKGallery-unpackaged-0.${{ github.run_number }}.${{ github.run_attempt }}.0.zip'
         
     - name: Upload unpackaged app
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: 'Unpackaged app'
         path: 'WindowsAppSDKGallery-unpackaged-0.${{ github.run_number }}.${{ github.run_attempt }}.0.zip'
